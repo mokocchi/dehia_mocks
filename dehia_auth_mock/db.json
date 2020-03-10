@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "role": "ROLE_AUTOR",
+            "nombre": "Ana",
+            "apellido": "González",
+            "email": "autor1@dehia.net",
+            "googleid": "1001"
+        },
+        {
+            "id": 2,
+            "role": "ROLE_AUTOR",
+            "nombre": "Juan",
+            "apellido": "Pérez",
+            "email": "autor2@dehia.net",
+            "googleid": "1002"
+        },
+        {
+            "id": 3,
+            "role": "ROLE_USUARIO_APP",
+            "nombre": "Juan",
+            "apellido": "Pérez",
+            "email": "autor2@dehia.net",
+            "googleid": "1002"
+        }
+    ]
+}

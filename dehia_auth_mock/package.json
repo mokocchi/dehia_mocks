@@ -1,0 +1,12 @@
+{
+  "name": "mocks",
+  "version": "1.0.0",
+  "description": "un mock para el servicio de autenticación",
+  "main": "index.js",
+  "author": "Jose Arcidiacono",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "json-server": "^0.16.1"
+  }
+}

@@ -1,0 +1,17 @@
+version: '3.3'
+services: 
+  auth.nginx.mock:
+    container_name: auth.nginx.mock
+    build:
+      context: .
+      dockerfile: ./docker/auth.nginx.mock/Dockerfile
+    expose:
+        - 80
+    networks:
+      dehia:
+        aliases:
+          - auth.nginx.mock
+
+networks:
+  dehia:
+    external: true
