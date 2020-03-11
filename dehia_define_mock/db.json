@@ -1,0 +1,19 @@
+{
+  "tipos-tarea": [
+    { "id": 1, "nombre": "Simple" },
+    { "id": 2, "nombre": "Ingresar texto" },
+    { "id": 3, "nombre": "Ingresar número" },
+    { "id": 4, "nombre": "Sacar foto" },
+    { "id": 5, "nombre": "Elegir una opción" },
+    { "id": 6, "nombre": "Opción múltiple" },
+    { "id": 7, "nombre": "Contadores" },
+    { "id": 8, "nombre": "Recolección" },
+    { "id": 9, "nombre": "Depósito" },
+    { "id": 10, "nombre": "Localización" }
+  ],
+  "estados": [
+      { "id": 1, "nombre": "Público" },
+      { "id": 2, "nombre": "Privado" }
+  ],
+  "dominios": [{ "id": 1, "nombre": "Pruebas" }]
+}

@@ -1,7 +1,11 @@
-var express = require('express');
+const jsonServer = require('json-server')
+const app = jsonServer.create()
+const router = jsonServer.router('db.json')
+const middlewares = jsonServer.defaults()
+
+app.use(middlewares)
 var multer = require('multer')
 var upload = multer()
-var app = express();
 
 app.use((req, res, next) => {
     console.log(`Called: ${req.method} ${req.path}`)
@@ -19,8 +23,14 @@ app.get("/api/v1.0/me", (req, res) => {
     })
 })
 
-app.post("/api/v1.0/tareas/*/plano", upload.single("plano"),(req, res, next) => {
+app.post("/api/v1.0/tareas/*/plano", (req, res, next) => {
     console.log(`Plano`)
+    console.log(req)
+    next()
+})
+
+app.post("/api/v1.0/tareas/*/plano", upload.single("plano"), (req, res, next) => {
+    console.log(`Plano multer`)
     console.log(req.body)
     console.log(req.file)
 })
@@ -31,8 +41,25 @@ app.get("/", (req, res) => {
 
 
 app.post("/api/v1.0/tareas", (req, res, next) => {
-    res.send("OK")
+    res.status(201).send("OK")
 })
+
+app.use(jsonServer.rewriter({
+    '/api/v1.0/public/*': '/$1',
+}))
+
+app.use(router)
+
+router.render = function (req, res) {
+    if (req.url.match(/(s$|s-.+$)/)) {
+        console.log("matched")
+        res.jsonp({
+            results: res.locals.data
+         })
+    } else {
+        res.jsonp(res.locals.data)
+    }
+}
 
 app.get("*", (req, res, next) => {
     console.log("ok")
