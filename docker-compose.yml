@@ -12,6 +12,19 @@ services:
         aliases:
           - auth.nginx.mock
 
+  define.nginx.mock:
+    container_name: define.nginx.mock
+    build:
+      context: .
+      dockerfile: ./docker/define.nginx.mock/Dockerfile
+    expose:
+        - 80
+    ports:
+      - "82:80"
+    networks:
+      dehia:
+        aliases:
+          - define.nginx.mock
 networks:
   dehia:
     external: true

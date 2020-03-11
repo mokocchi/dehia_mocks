@@ -19,7 +19,6 @@ server.get('/api/validate', function (req, res) {
     
     switch (header) {
         case "Bearer 1":
-            console.log("bearer 1")
             res.redirect('/usuarios/1')
             break;
         case "Bearer 2":
@@ -29,7 +28,7 @@ server.get('/api/validate', function (req, res) {
             res.redirect('/usuarios/3')
             break;
         default:
-            res.sendStatus(404)
+            res.redirect('/usuarios/1')
     }
 })
 
