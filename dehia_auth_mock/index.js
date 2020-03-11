@@ -5,6 +5,13 @@ const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
 
+server.post('/api/oauth/v2/token', (req, res) => {
+    res.send({
+        access_token: "1",
+        expires_in: 3600
+    })
+})
+
 server.get('/api/validate', function (req, res) {
     const header = req.get("authorization")
     if (!header) {

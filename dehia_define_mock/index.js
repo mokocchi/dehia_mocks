@@ -25,14 +25,13 @@ app.get("/api/v1.0/me", (req, res) => {
 
 app.post("/api/v1.0/tareas/*/plano", (req, res, next) => {
     console.log(`Plano`)
-    console.log(req)
     next()
 })
 
 app.post("/api/v1.0/tareas/*/plano", upload.single("plano"), (req, res, next) => {
     console.log(`Plano multer`)
-    console.log(req.body)
     console.log(req.file)
+    res.send("File received")
 })
 
 app.get("/", (req, res) => {
