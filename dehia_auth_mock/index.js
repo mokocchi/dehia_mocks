@@ -23,7 +23,7 @@ server.get('/api/validate', function (req, res) {
             more_info: "http://localhost:8000/api/doc"
         })
     }
-    
+
     switch (header) {
         case "Bearer 1":
             res.redirect('/usuarios/1')
@@ -35,7 +35,13 @@ server.get('/api/validate', function (req, res) {
             res.redirect('/usuarios/3')
             break;
         default:
-            res.redirect('/usuarios/1')
+            res.status(401).send({
+                status: 401,
+                developer_message: 'El token expiró o es inválido',
+                user_message: "Error en la autenticación",
+                error_code: 1,
+                more_info: "http://localhost:8000/api/doc"
+            })
     }
 })
 
