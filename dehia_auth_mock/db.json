@@ -2,7 +2,7 @@
     "usuarios": [
         {
             "id": 1,
-            "role": "ROLE_AUTOR",
+            "roles": ["ROLE_AUTOR"],
             "nombre": "Ana",
             "apellido": "González",
             "email": "autor1@dehia.net",
@@ -10,7 +10,7 @@
         },
         {
             "id": 2,
-            "role": "ROLE_AUTOR",
+            "roles": ["ROLE_AUTOR"],
             "nombre": "Juan",
             "apellido": "Pérez",
             "email": "autor2@dehia.net",
@@ -18,7 +18,7 @@
         },
         {
             "id": 3,
-            "role": "ROLE_USUARIO_APP",
+            "roles": ["ROLE_USUARIO_APP"],
             "nombre": "Andrés",
             "apellido": "Sánchez",
             "email": "usuario@dehia.net",
