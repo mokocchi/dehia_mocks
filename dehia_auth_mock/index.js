@@ -12,6 +12,10 @@ server.post('/api/oauth/v2/token', (req, res) => {
     })
 })
 
+server.get('/api/v1.0/users/me', (req, res) => {
+    res.redirect('/api/validate')
+})
+
 server.get('/api/validate', function (req, res) {
     const header = req.get("authorization")
     if (!header) {
